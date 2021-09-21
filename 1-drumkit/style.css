@@ -1,0 +1,36 @@
+.touches {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 21% 8%;
+}
+
+.touche {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid white;
+    transition: all 0.07s;
+    width: 70px;
+    height: 70px;
+    margin-top: 40px;
+}
+
+.playing {
+    border: 3px solid orange;
+    transform: scale(1.1);
+}
+
+.image {
+    background-image: url("images/backgrounds.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+
+}
+body {
+    color: white;
+    margin: 0;
+    padding: 0;
+
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body class="image">
+    <div class='touches'>
+        <div data-key="65" class='touche'>
+            <p>A</p>
+            <span>Kick</span>
+        </div>
+        <div data-key="83" class='touche'>
+            <p>S</p>
+            <span>Snare</span>
+        </div>
+        <div data-key="68" class='touche'>
+            <p>D</p>
+            <span>Clap</span>
+        </div>
+        <div data-key="70" class='touche'>
+            <p>F</p>
+            <span>Boom</span>
+        </div>
+        <div data-key="71" class='touche'>
+            <p>G</p>
+            <span>Hihat</span>
+        </div>
+    </div>    
+
+    <audio data-key="65" src="sounds/kick.wav"></audio>
+    <audio data-key="83" src="sounds/snare.wav"></audio>
+    <audio data-key="68" src="sounds/clap.wav"></audio>
+    <audio data-key="70" src="sounds/boom.wav"></audio>
+    <audio data-key="71" src="sounds/hihat.wav"></audio>
+
+    <script>
+        window.addEventListener('keydown', function (e) {
+            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+            const touche = document.querySelector(`.touche[data-key="${e.keyCode}"]`)
+            if (!audio) return;
+            audio.currentTime = 0;
+            audio.play();
+            touche.classList.add('playing')
+            // console.log(audio)
+        })
+
+        function removeTransition(e) {
+            if(e.propertyName !== 'transform') return;
+            console.log(e.propertyName)
+            this.classList.remove('playing');
+            console.log(this)
+        }
+
+        const touches = document.querySelectorAll('.touche');
+        touches.forEach(touche =>  touche.addEventListener('transitionend', removeTransition));
+
+    </script>
+</body>
+
+
+</html>
