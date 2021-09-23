@@ -1,0 +1,40 @@
+:root {
+    --color: #6732d1;
+    --spacing: 10px;
+    --blur: 10px;
+}
+
+.image_tree {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    margin-top: 10vh;
+    padding: var(--spacing);
+    filter: blur(var(--blur));
+    background: var(--color);
+}
+
+.color_js {
+    color: var(--color)
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 20%;
+}
+
+.ctn_spacing, .ctn_blur, .ctn_color {
+    display: flex;
+    align-items: center;
+}
+
