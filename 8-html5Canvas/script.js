@@ -37,6 +37,7 @@ function draw(e) {
         direction = !direction;
     }
 
+    
     if(direction) {
         ctx.lineWidth++
     } else {
