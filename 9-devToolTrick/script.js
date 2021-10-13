@@ -25,7 +25,7 @@ const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
     console.info('some news there')
 
     // Testing
-    console.assert(1 === 2, '1 not equal 2')
+    console.assert(2 === 2, '1 not equal 2')
 
     // clearing
     // console.clear()
